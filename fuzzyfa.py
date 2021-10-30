@@ -34,6 +34,8 @@ def check_updates():
         if repver == current:
             print("")
             print("[+] Script is up to date.")
+            print("")
+            print("")
 
         else:
             ask = input("[+] Update is available. Do you want to update? [Y/n]  ")
