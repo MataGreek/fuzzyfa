@@ -16,6 +16,7 @@ no_choice = ['No', 'n', 'no', 'NO', 'N']
 
 logo = pyfiglet.figlet_format("Fuzzy Fa")
 print(logo)
+
 def check_updates():
     try:
         conn = httplib.HTTPSConnection("raw.githubusercontent.com")
@@ -37,45 +38,45 @@ def check_updates():
         else:
             ask = input("[+] Update is available. Do you want to update? [Y/n]  ")
 
-        if ask == yes_choice:
-            print("")
-            print("[*] updating...")
-            print("")
-            time.sleep(2)
+            if ask in yes_choice:
+                print("")
+                print("[*] updating...")
+                print("")
+                time.sleep(2)
 
 
 
-        try:
-            conn.request("GET", "/MataGreek/fuzzyfa/main/fuzzyfa.py")
+            try:
+                conn.request("GET", "/MataGreek/fuzzyfa/main/fuzzyfa.py")
 
-            new = conn.getresponse().read().strip().decode()
+                new = conn.getresponse().read().strip().decode()
 
-            with open('fuzzyfa.py', 'w+') as fa:
-                currentfa = fa.read().strip()
-                
-                if new != currentfa:
-                    fa.write(new)
-            print("")
+                with open('fuzzyfa.py', 'w+') as fa:
+                    currentfa = fa.read().strip()
+                    
+                    if new != currentfa:
+                        fa.write(new)
+                print("")
 
-            print("[+] Updated!")
-            time.sleep(1)
-            print("")
-            print("[!] PLEASE REOPEN THE PROGRAM FOR THE UPDATES TAKE AFFECT!")
-            print("")
-            pass
-            if repver != current:
+                print("[+] Updated!")
+                time.sleep(1)
+                print("")
+                print("[!] PLEASE REOPEN THE PROGRAM FOR THE UPDATES TAKE AFFECT!")
+                print("")
+                pass
+                if repver != current:
 
-                with open('./core/version.txt', 'w+') as pf:
+                    with open('./core/version.txt', 'w+') as pf:
 
-                    pf.write(repver)
-            else:
+                        pf.write(repver)
+                else:
 
-                print("[!] Your version is:", current + "You are not up to date! Please update the program.")
+                    print("[!] Your version is:", current + "You are not up to date! Please update the program.")
 
-                              
+                                
 
-        except KeyboardInterrupt:
-            print("Exit.")
+            except KeyboardInterrupt:
+                print("Exit.")
     except Exception as e:
         print("unable to check for update. Error: ", e)
 
