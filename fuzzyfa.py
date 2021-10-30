@@ -4,8 +4,10 @@ import time
 import pyfiglet
 import sys, os
 import colorama
+from colorama import *
 import requests
 import http.client as httplib
+colorama.init()
 
 
 yes_choice = ['','Yes', 'y', 'Y', 'yes', 'YES']
@@ -28,6 +30,8 @@ def check_updates():
         print("=" * 70)
         print("[!] Latest Version:",repver)
         print("=" * 70)
+        print("")
+        print("")
 
         with open('./core/version.txt') as f:
             current = f.read().strip()
@@ -63,7 +67,7 @@ def check_updates():
                 print("[+] Updated!")
                 time.sleep(1)
                 print("")
-                print("[!] PLEASE REOPEN THE PROGRAM FOR THE UPDATES TAKE AFFECT!")
+                print(Fore.LIGHTRED_EX + "[!] PLEASE REOPEN THE PROGRAM FOR THE UPDATES TAKE AFFECT!" + Fore.RESET)
                 print("")
                 pass
                 if repver != current:
