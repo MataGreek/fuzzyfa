@@ -31,15 +31,14 @@ def check_updates():
         print("[!] Latest Version:",repver)
         print("=" * 70)
         print("")
-        print("")
+        
 
         with open('./core/version.txt') as f:
             current = f.read().strip()
         if repver == current:
-            print("")
             print("[+] Script is up to date.")
             print("")
-            print("")
+            
 
         else:
             ask = input("[+] Update is available. Do you want to update? [Y/n]  ")
@@ -62,7 +61,21 @@ def check_updates():
                     
                     if new != currentfa:
                         fa.write(new)
-                print("")
+                
+            except KeyboardInterrupt:
+                print("exit.")
+            try:
+                conn.request("GET", "/MataGreek/fuzzyfa/main/setup.py")
+
+                new = conn.getresponse().read().strip().decode()
+                
+                with open('setup.py', 'w+') as se:
+                    currentfa = se.read().strip()
+                    
+                    if new != currentfa:
+                        se.write(new)
+            except KeyboardInterrupt:
+                print("exit.")
 
                 print("[+] Updated!")
                 time.sleep(1)
