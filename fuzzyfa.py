@@ -57,6 +57,7 @@ def check_updates():
                     fa.write(new)
         except KeyboardInterrupt:
             print("Exit.")
+check_updates()
 
 
 
