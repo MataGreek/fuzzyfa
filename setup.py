@@ -26,9 +26,12 @@ if sys.platform == "win32":
 print("")
 print("")
 print("")
-question = (" You are ready! Do you want to open the program right now? (Y/n):  ")
 
-if question in yes_choice:
-    import fuzzyfa
-else:
-    quit()
+def question():
+    question = (" You are ready! Do you want to open the program right now? (Y/n):  ")
+
+    if question in yes_choice:
+        import fuzzyfa
+    else:
+        quit()
+question()
