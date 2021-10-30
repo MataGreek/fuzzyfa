@@ -80,7 +80,7 @@ def check_updates():
         print("unable to check for update. Error: ", e)
 
 
-check_updates
+check_updates()
 
 
 
