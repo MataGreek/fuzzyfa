@@ -21,19 +21,24 @@
 <br>
 
 <h1>DOWNLOAD && INSTALL</h1>
-```
-git clone https://github.com/MataGreek/fuzzyfa.git
-```
+
 <br>
-```javascript
-  cd fuzzyfa
-```
+        
+    git clone https://github.com/MataGreek/fuzzyfa.git
+
+
+
 <br>
-```javascript
-  python3 setup.py
-```
+
+    cd fuzzyfa
 <br>
-```javascript
-  python3 fuzzyfa.py
-```
+
+
+    python3 setup.py
+
+<br>
+
+    python3 fuzzyfa.py
+
+<br>
 <p>Enjoy 🙂</p>
