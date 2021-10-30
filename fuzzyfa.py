@@ -41,8 +41,7 @@ def check_updates():
             print("[*] updating...")
             print("")
             time.sleep(2)
-    except Exception as e:
-        print("Error:", e)
+
 
 
         try:
@@ -57,6 +56,8 @@ def check_updates():
                     fa.write(new)
         except KeyboardInterrupt:
             print("Exit.")
+    except KeyboardInterrupt:
+        print("Exit.")
 check_updates()
 
 
