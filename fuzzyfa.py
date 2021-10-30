@@ -33,8 +33,9 @@ def check_updates():
         if repver == current:
             print("")
             print("[+] Script is up to date.")
+
         else:
-            ask = input ("[+] Update is available. Do you want to update? [Y/n]  ")
+            ask = input("[+] Update is available. Do you want to update? [Y/n]  ")
 
         if ask == yes_choice:
             print("")
@@ -49,16 +50,37 @@ def check_updates():
 
             new = conn.getresponse().read().strip().decode()
 
-            with open('greekhacking.py', 'w+') as fa:
+            with open('fuzzyfa.py', 'w+') as fa:
                 currentfa = fa.read().strip()
                 
                 if new != currentfa:
                     fa.write(new)
+            print("")
+
+            print("[+] Updated!")
+            time.sleep(1)
+            print("")
+            print("[!] PLEASE REOPEN THE PROGRAM FOR THE UPDATES TAKE AFFECT!")
+            print("")
+            pass
+            if repver != current:
+
+                with open('./core/version.txt', 'w+') as pf:
+
+                    pf.write(repver)
+            else:
+
+                print("[!] Your version is:", current + "You are not up to date! Please update the program.")
+
+                              
+
         except KeyboardInterrupt:
             print("Exit.")
-    except KeyboardInterrupt:
-        print("Exit.")
+    except Exception as e:
+        print("unable to check for update. Error: ", e)
 
+
+check_updates
 
 
 
@@ -71,7 +93,7 @@ print("[*] Please enter the url like this: http://example.com/")
 print("=" * 50)
 print("")
 target = input("[-] Enter the target: ")
-check_updates()
+
 
 print("")
 wlist = open('fuzz.txt', 'r')
