@@ -25,15 +25,15 @@
 git clone https://github.com/MataGreek/fuzzyfa.git
 ```
 <br>
-```
-cd fuzzyfa
-```
-<br>
-```
-python3 setup.py
+```javascript
+  cd fuzzyfa
 ```
 <br>
+```javascript
+  python3 setup.py
 ```
-python3 fuzzyfa.py
+<br>
+```javascript
+  python3 fuzzyfa.py
 ```
 <p>Enjoy 🙂</p>
