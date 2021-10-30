@@ -58,7 +58,7 @@ def check_updates():
             print("Exit.")
     except KeyboardInterrupt:
         print("Exit.")
-check_updates()
+
 
 
 
@@ -71,6 +71,7 @@ print("[*] Please enter the url like this: http://example.com/")
 print("=" * 50)
 print("")
 target = input("[-] Enter the target: ")
+check_updates()
 
 print("")
 wlist = open('fuzz.txt', 'r')
