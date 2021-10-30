@@ -27,11 +27,9 @@ print("")
 print("")
 print("")
 
-def question():
-    question = (" You are ready! Do you want to open the program right now? (Y/n):  ")
+question = input(" You are ready! Do you want to open the program right now? (Y/n):  ")
 
-    if question in yes_choice:
-        import fuzzyfa
-    else:
-        quit()
-question()
+if question in yes_choice:
+    import fuzzyfa
+else:
+    quit()
