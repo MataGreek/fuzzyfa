@@ -73,8 +73,6 @@ def check_updates():
                     
                     if new != currentfa:
                         se.write(new)
-            except KeyboardInterrupt:
-                print("exit.")
 
                 print("[+] Updated!")
                 time.sleep(1)
@@ -91,6 +89,8 @@ def check_updates():
 
                     print("[!] Your version is:", current + "You are not up to date! Please update the program.")
 
+            except KeyboardInterrupt:
+                print("exit.")
                                 
 
             except KeyboardInterrupt:
