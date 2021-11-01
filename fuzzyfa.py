@@ -131,7 +131,7 @@ for path in wordlist:
             print("\n[+] Directory Found: ", str(url) + "   (Status: " + str(req.status_code) + ")    ")
         if req.status_code != 200:
             spaces = ' ' * 10
-            print("\r  Scanning: " +str(path) + str(spaces), end='')
+            print("\r  Scanning: " + str(path) + str(spaces), end='')
                   
     except KeyboardInterrupt:
             print("[!] Exit.")
