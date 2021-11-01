@@ -73,6 +73,14 @@ def check_updates():
                     
                     if new != currentfa:
                         se.write(new)
+                if repver != current:
+
+                    with open('./core/version.txt', 'w+') as pf:
+
+                        pf.write(repver)
+                else:
+
+                    print("[!] Your version is:", current + "You are not up to date! Please update the program.")
             except KeyboardInterrupt:
                 print("exit.")
 
@@ -82,14 +90,6 @@ def check_updates():
                 print(Fore.LIGHTRED_EX + "[!] PLEASE REOPEN THE PROGRAM FOR THE UPDATES TAKE AFFECT!" + Fore.RESET)
                 print("")
                 pass
-                if repver != current:
-
-                    with open('./core/version.txt', 'w+') as pf:
-
-                        pf.write(repver)
-                else:
-
-                    print("[!] Your version is:", current + "You are not up to date! Please update the program.")
 
                                 
 
@@ -131,7 +131,7 @@ for path in wordlist:
             print("\n[+] Directory Found: ", str(url) + "   (Status: " + str(req.status_code) + ")    ")
         if req.status_code != 200:
             spaces = ' ' * 10
-            print("\r  Scanning: " + str(path) + str(spaces), end='')
+            print("\r  Scanning: " +str(path) + str(spaces), end='')
                   
     except KeyboardInterrupt:
             print("[!] Exit.")
