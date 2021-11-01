@@ -9,7 +9,6 @@ import requests
 import http.client as httplib
 colorama.init()
 
-
 yes_choice = ['','Yes', 'y', 'Y', 'yes', 'YES']
 no_choice = ['No', 'n', 'no', 'NO', 'N']
 
@@ -115,6 +114,7 @@ print("")
 target = input("[-] Enter the target: ")
 
 
+
 print("")
 wlist = open('fuzz.txt', 'r')
 content = wlist.read()
@@ -128,7 +128,11 @@ for path in wordlist:
        
         req = requests.get(url)
         if req.status_code == 200:
-            print("[+] Directory Found: ", str(url) + "   (Status: " + str(req.status_code) + ")")
+            print("\n[+] Directory Found: ", str(url) + "   (Status: " + str(req.status_code) + ")    ")
+        if req.status_code != 200:
+            spaces = ' ' * 10
+            print("\r  Scanning: " +str(path) + str(spaces), end='')
+                  
     except KeyboardInterrupt:
             print("[!] Exit.")
             sys.exit()
